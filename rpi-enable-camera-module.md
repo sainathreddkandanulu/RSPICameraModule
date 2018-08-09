@@ -22,3 +22,7 @@ Load `v4l2loopback` module via
     # sudo modprobe v4l2loopback devices=1 
 
 or add `v4l2loopback video_nr=1` to `/etc/modules`.
+
+Then copy the video from `/dev/video0` to `/dev/video1`.
+
+    ffmpeg -f video4linux2 -i /dev/video0 -vcodec copy -f v4l2 /dev/video1
