@@ -19,7 +19,10 @@ The video device `/dev/video0` can only be accessed by one process at a time. Us
 ## Install v4l2loopback
 
     # Install kernel headers
+    # Note: Kernel headers may not be up-to-date. 
+    # To downgrade the firmware to a specific firmware use sudo rpi-update <commit hash from https://github.com/Hexxeh/rpi-firmware>
     sudo apt-get install raspberrypi-kernel-headers
+    
     # Download source and install
     git clone https://github.com/umlaeute/v4l2loopback
     cd v4l2loopback
