@@ -34,7 +34,10 @@ Load `v4l2loopback` module via
     sudo modprobe v4l2loopback video_nr=1 # creates /dev/video1
     # sudo modprobe v4l2loopback devices=1 
 
-or add `v4l2loopback video_nr=1` to `/etc/modules`.
+If you want to load the module on startup add `v4l2loopback` to `/etc/modules` and the options to `/etc/modprobe.d/v4l2loopback.conf`. https://askubuntu.com/a/822136
+
+    # /etc/modprobe.d/v4l2loopback.conf
+    options v4l2loopback video_nr=1
 
 Then copy the video from `/dev/video0` to `/dev/video1`.
 
