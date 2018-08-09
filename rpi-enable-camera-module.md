@@ -16,6 +16,16 @@ or add `bcm2835-v4l2` to `/etc/modules`.
 
 The video device `/dev/video0` can only be accessed by one process at a time. Use a loopback device to allow mutli process access at `/dev/video1`. https://raspberrypi.stackexchange.com/a/19897
 
+## Install v4l2loopback
+
+    # Install kernel headers
+    sudo apt-get install raspberrypi-kernel-headers
+    # Download source and install
+    git clone https://github.com/umlaeute/v4l2loopback
+    cd v4l2loopback
+    make
+    sudo make install
+
 Load `v4l2loopback` module via
 
     sudo modprobe v4l2loopback video_nr=1 # creates /dev/video1
